@@ -1,0 +1,22 @@
+.view-more-card{
+  display:inline-block;
+  text-align: center;
+
+}
+
+img{
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+h2{
+  font-family: 'Montserrat';
+}
+.container{
+  padding-top: 30px;
+}
+
+.description-col{
+  padding-top: 50px;
+}

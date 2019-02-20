@@ -1,0 +1,34 @@
+<div class="container-fluid search-for-section">
+  <div class="row">
+    <div class="col search-col">
+      <h1 class="search-for-text float-left">Search For</h1>
+      <input class="form-control search-input" type="text" name="search" [(ngModel)]="filter">
+    </div>
+    <div class="col rectangle-col">
+      <div class="rectangle float-right"><h2 class="text-in-rectangle">What we see depends mainly on what we look for
+        </h2>
+        <p>-John Lubbock</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid photo-container">
+  <div class="row">
+    <div class="col">
+      <ul *ngFor="let item of photosArray | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+        <li><img src={{item.urls.full}} alt={{item.description}} ></li>
+        <br>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-dark view-button" (click)="onView(i)">
+          View More
+        </button>
+
+      </ul>
+      <pagination-controls class="pagination-controls" (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+  <a href="https://icons8.com/icon/5376/camera">Camera icon by Icons8</a>
+</div>
+
+
+
